@@ -165,6 +165,13 @@ Show upload/indexing progress during long-running operations.
 - [ ] Fix `.file-search.yaml.example`: The `list` and `manage` tool groups are mentioned but not implemented in `server.go`. Either implement them or update the example to use specific tool names.
 - [ ] Verify `scripts/test_integration.sh` works with the final binary name.
 
+### 16. Performance Improvements
+**Priority**: Medium
+**Status**: Not Started
+**Goal**: Improve efficiency of long-running operations.
+
+- [ ] Implement exponential backoff for operation polling (import/upload checks currently poll every 2s regardless of operation duration).
+
 ---
 
 ## 📋 Remaining Features (Phase 5+)
@@ -194,7 +201,36 @@ file-search document update <doc-name> --store "Research" --metadata "category=i
 ---
 
 
-### 10. Batch Operations
+### 10. Operation List Command
+**Priority**: Medium
+**Status**: Not Started
+**Goal**: Allow users to discover and track long-running operations without needing the operation ID.
+
+Add `operation list` command to list all operations for a store:
+
+```bash
+file-search operation list --store "StoreName"
+file-search operation list --store-id "fileSearchStores/xyz"
+file-search operation list --store "StoreName" --status pending
+file-search operation list --store "StoreName" --type import
+```
+
+**Implementation Notes**:
+- Check if `client.Operations.List()` or similar exists in genai SDK
+- Support filtering by status (pending, done, failed)
+- Support filtering by type (import, upload)
+- Display operation ID, type, status, and creation time
+- Support both text and JSON output formats
+- Include name resolution for store parameter
+
+**Research Needed**:
+- [ ] Verify API support for listing operations: `go doc google.golang.org/genai.Operations`
+- [ ] Check if operations can be listed per-store or globally
+
+---
+
+
+### 11. Batch Operations
 **Priority**: Low
 **Status**: Not Started
 
