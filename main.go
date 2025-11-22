@@ -128,7 +128,7 @@ func initConfig() {
 	// Set defaults
 	viper.SetDefault("completion_enabled", true)
 	viper.SetDefault("completion_cache_ttl", "300s")
-	viper.SetDefault("mcp_tools", "query")
+	viper.SetDefault("mcp_tools", "all")
 
 	// Bind environment variables
 	viper.BindEnv("api_key", "GOOGLE_API_KEY", "GEMINI_API_KEY")
