@@ -295,7 +295,14 @@ func main() {
 				return err
 			}
 			defer client.Close()
-			store, err := client.GetStore(ctx, args[0])
+
+			// Resolve store name to ID
+			storeID, err := client.ResolveStoreName(ctx, args[0])
+			if err != nil {
+				return err
+			}
+
+			store, err := client.GetStore(ctx, storeID)
 			if err != nil {
 				return err
 			}
@@ -318,7 +325,14 @@ func main() {
 				return err
 			}
 			defer client.Close()
-			err = client.DeleteStore(ctx, args[0], deleteStoreForce)
+
+			// Resolve store name to ID
+			storeID, err := client.ResolveStoreName(ctx, args[0])
+			if err != nil {
+				return err
+			}
+
+			err = client.DeleteStore(ctx, storeID, deleteStoreForce)
 			if err != nil {
 				return err
 			}
