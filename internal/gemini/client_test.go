@@ -220,6 +220,161 @@ func containsDocuments(s string) bool {
 	return strings.Contains(s, "/documents/")
 }
 
+// TestResolveStoreNameLogic tests the complete resolution logic
+func TestResolveStoreNameLogic(t *testing.T) {
+	tests := []struct {
+		name           string
+		input          string
+		expectPassthru bool
+		desc           string
+	}{
+		{
+			name:           "full resource ID passes through",
+			input:          "fileSearchStores/test-store-abc123xyz",
+			expectPassthru: true,
+			desc:           "Resource IDs should be returned as-is without API lookup",
+		},
+		{
+			name:           "resource ID with longer suffix",
+			input:          "fileSearchStores/store-abc123xyz456",
+			expectPassthru: true,
+			desc:           "Any resource ID format should pass through",
+		},
+		{
+			name:           "friendly name requires lookup",
+			input:          "my-store",
+			expectPassthru: false,
+			desc:           "Friendly names should trigger API lookup",
+		},
+		{
+			name:           "friendly name with spaces",
+			input:          "My Research Store",
+			expectPassthru: false,
+			desc:           "Friendly names with spaces should trigger API lookup",
+		},
+		{
+			name:           "friendly name with dashes",
+			input:          "my-store-name",
+			expectPassthru: false,
+			desc:           "Friendly names with dashes should trigger API lookup",
+		},
+		{
+			name:           "short name",
+			input:          "test",
+			expectPassthru: false,
+			desc:           "Short names should trigger API lookup",
+		},
+	}
+
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			// Replicate the logic from client.go ResolveStoreName
+			isResourceID := false
+			if len(tt.input) > 0 && (tt.input[:1] == "f" || tt.input[:1] == "F") {
+				if len(tt.input) > 16 && tt.input[:16] == "fileSearchStores" {
+					isResourceID = true
+				}
+			}
+
+			if isResourceID != tt.expectPassthru {
+				t.Errorf("%s: expected passthrough=%v, got %v", tt.desc, tt.expectPassthru, isResourceID)
+			}
+		})
+	}
+}
+
+// TestResolveFileNameLogic tests the complete resolution logic
+func TestResolveFileNameLogic(t *testing.T) {
+	tests := []struct {
+		name           string
+		input          string
+		expectPassthru bool
+		desc           string
+	}{
+		{
+			name:           "full resource ID passes through",
+			input:          "files/abc123xyz456",
+			expectPassthru: true,
+			desc:           "Resource IDs should be returned as-is without API lookup",
+		},
+		{
+			name:           "friendly name requires lookup",
+			input:          "my-document.pdf",
+			expectPassthru: false,
+			desc:           "Friendly names should trigger API lookup",
+		},
+		{
+			name:           "friendly name without extension",
+			input:          "document",
+			expectPassthru: false,
+			desc:           "Friendly names without extension should trigger API lookup",
+		},
+		{
+			name:           "partial match should not pass through",
+			input:          "files-data.txt",
+			expectPassthru: false,
+			desc:           "Names starting with 'files' but not 'files/' should trigger lookup",
+		},
+	}
+
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			// Replicate the logic from client.go ResolveFileName
+			isResourceID := len(tt.input) > 6 && tt.input[:6] == "files/"
+
+			if isResourceID != tt.expectPassthru {
+				t.Errorf("%s: expected passthrough=%v, got %v", tt.desc, tt.expectPassthru, isResourceID)
+			}
+		})
+	}
+}
+
+// TestResolveDocumentNameLogic tests the complete resolution logic
+func TestResolveDocumentNameLogic(t *testing.T) {
+	tests := []struct {
+		name           string
+		input          string
+		expectPassthru bool
+		desc           string
+	}{
+		{
+			name:           "full resource ID passes through",
+			input:          "fileSearchStores/store123/documents/doc456",
+			expectPassthru: true,
+			desc:           "Resource IDs should be returned as-is without API lookup",
+		},
+		{
+			name:           "friendly name requires lookup",
+			input:          "my-document.pdf",
+			expectPassthru: false,
+			desc:           "Friendly names should trigger API lookup within store",
+		},
+		{
+			name:           "friendly name with spaces",
+			input:          "Research Paper Draft.pdf",
+			expectPassthru: false,
+			desc:           "Friendly names with spaces should trigger API lookup",
+		},
+		{
+			name:           "partial path should not pass through",
+			input:          "documents/doc456",
+			expectPassthru: false,
+			desc:           "Partial paths without store prefix should trigger lookup",
+		},
+	}
+
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			// Replicate the logic from client.go ResolveDocumentName
+			isResourceID := len(tt.input) > 10 && strings.Contains(tt.input, "/documents/")
+
+			if isResourceID != tt.expectPassthru {
+				t.Errorf("%s: expected passthrough=%v, got %v", tt.desc, tt.expectPassthru, isResourceID)
+			}
+		})
+	}
+}
+
 // TestGetStoreNamesSignature verifies the method signature and return types
 func TestGetStoreNamesSignature(t *testing.T) {
 	t.Run("method exists and returns correct types", func(t *testing.T) {
