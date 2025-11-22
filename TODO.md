@@ -172,6 +172,27 @@ Show upload/indexing progress during long-running operations.
 
 - [ ] Implement exponential backoff for operation polling (import/upload checks currently poll every 2s regardless of operation duration).
 
+### 17. Alternative Installation Workflow
+**Priority**: Low
+**Status**: Not Started
+**Goal**: Simplify installation and MCP server registration for end users.
+
+- [ ] Investigate using Gemini CLI's `gemini mcp add` workflow instead of manual extension installation.
+- [ ] Research requirements: https://geminicli.com/docs/tools/mcp-server/#adding-a-server-gemini-mcp-add
+- [ ] Determine if we need to publish the CLI tool to package managers (brew, etc.) first.
+- [ ] Set up Homebrew tap for `brew install file-search` (see goreleaser brew config).
+- [ ] Update documentation to include this alternative installation method if viable.
+
+### 18. Display Grounding Details
+**Priority**: Medium
+**Status**: Not Started
+**Goal**: Show detailed grounding attribution in query results.
+
+- [ ] Display grounding metadata details in text output format (currently only shows `[Grounding Metadata Found]`).
+- [ ] Show grounding chunks with source documents, snippets, and relevance scores.
+- [ ] Format grounding attribution in a user-friendly way (e.g., "From: documentName.pdf, Page X").
+- [ ] Ensure JSON output already includes full grounding details (verify current implementation).
+
 ---
 
 ## 📋 Remaining Features (Phase 5+)
