@@ -5,7 +5,6 @@ import (
 	"strings"
 	"time"
 
-	"github.com/mikesmitty/file-search-extension/internal/constants"
 	"github.com/mikesmitty/file-search-extension/internal/gemini"
 )
 
@@ -163,11 +162,8 @@ func (c *Completer) GetDocumentNames(storeRef string) []string {
 
 // GetModelNames returns a list of available model names
 func (c *Completer) GetModelNames() []string {
-	// Always include the default/static list as fallback or base
-	defaults := constants.GetModelList()
-
 	if !c.enabled {
-		return defaults
+		return []string{}
 	}
 
 	// Check cache first
@@ -182,13 +178,13 @@ func (c *Completer) GetModelNames() []string {
 	// Ensure client is initialized
 	client, err := c.ensureClient(ctx)
 	if err != nil {
-		return defaults
+		return []string{}
 	}
 
 	// Get models from API
 	models, err := client.ListModels(ctx)
 	if err != nil {
-		return defaults
+		return []string{}
 	}
 
 	// Extract names
@@ -203,11 +199,6 @@ func (c *Completer) GetModelNames() []string {
 		// The `genai` SDK `GenerateContent` usually takes "gemini-pro".
 		name := strings.TrimPrefix(m.Name, "models/")
 		names = append(names, name)
-	}
-
-	// If we got no models, return defaults
-	if len(names) == 0 {
-		return defaults
 	}
 
 	// Cache the results
