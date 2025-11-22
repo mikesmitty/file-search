@@ -47,6 +47,8 @@ sboms:
 
 archives:
   - id: nix
+    builds:
+      - default
     formats: ['tar.gz']
     # this name template makes the OS and Arch compatible with the results of uname.
     name_template: >-
@@ -61,6 +63,8 @@ archives:
         dst: GEMINI.md
 
   - id: windows
+    builds:
+      - windows
     formats: ['zip']
     name_template: >-
       {{ .Os }}.
