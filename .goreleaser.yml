@@ -23,9 +23,7 @@ builds:
       - -trimpath
     ldflags:
       - -s -w -X main.version={{.Version}} -X main.commit={{.Commit}} -X main.date={{ .CommitDate }}
-
-builds_info:
-  mtime: "{{ .CommitTimestamp }}"
+    mod_timestamp: "{{ .CommitTimestamp }}"
 
 sboms:
   - artifacts: archive
@@ -33,7 +31,7 @@ sboms:
     artifacts: source
 
 archives:
-  - format: tar.gz
+  - formats: ['tar.gz']
     # this name template makes the OS and Arch compatible with the results of uname.
     name_template: >-
       {{ .Os }}.
@@ -44,7 +42,7 @@ archives:
     # use zip for windows archives
     format_overrides:
       - goos: windows
-        format: zip
+        formats: ['zip']
     files:
       - gemini-extension.json
       - src: GEMINI.md.release
