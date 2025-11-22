@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.4](https://github.com/mikesmitty/file-search-extension/compare/v0.1.3...v0.1.4) (2025-11-22)
+
+
+### Bug Fixes
+
+* add missing friendly name resolution in store command ([#13](https://github.com/mikesmitty/file-search-extension/issues/13)) ([3531604](https://github.com/mikesmitty/file-search-extension/commit/35316048ed1c3b86f9631d3cbafbaf0bade3d14a))
+
 ## [0.1.3](https://github.com/mikesmitty/file-search-extension/compare/v0.1.2...v0.1.3) (2025-11-22)
 
 
