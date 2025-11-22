@@ -59,8 +59,7 @@ archives:
       {{- .ProjectName }}
     files:
       - gemini-extension.json
-      - src: GEMINI.md.release
-        dst: GEMINI.md
+      - GEMINI.file-search.md
 
   - id: windows
     builds:
@@ -75,8 +74,7 @@ archives:
     files:
       - src: gemini-extension.windows.json
         dst: gemini-extension.json
-      - src: GEMINI.md.release
-        dst: GEMINI.md
+      - GEMINI.file-search.md
 
 checksum:
   name_template: 'checksums.txt'
