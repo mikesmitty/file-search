@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.3](https://github.com/mikesmitty/file-search-extension/compare/v0.1.2...v0.1.3) (2025-11-22)
+
+
+### Bug Fixes
+
+* update extension binary path ([#8](https://github.com/mikesmitty/file-search-extension/issues/8)) ([fd72adc](https://github.com/mikesmitty/file-search-extension/commit/fd72adcb2c6b6d834a78de26a86d59898d4aa0bb))
+
 ## [0.1.2](https://github.com/mikesmitty/file-search-extension/compare/v0.1.1...v0.1.2) (2025-11-22)
 
 
