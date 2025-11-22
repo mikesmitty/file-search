@@ -34,7 +34,7 @@ These tests ensure that both friendly names and resource IDs are properly recogn
 Integration tests require valid API credentials. Use 1Password CLI to inject credentials:
 
 ```bash
-op run --env-file .env -- ./test_integration.sh
+op run --env-file .env -- ./scripts/test_integration.sh
 ```
 
 ### Manual Integration Testing
@@ -397,11 +397,11 @@ export GOOGLE_API_KEY=invalid
 
 #### Automated Integration Testing
 
-The `test_integration.sh` script now includes completion tests (Test 8):
+The `scripts/test_integration.sh` script now includes completion tests (Test 8):
 
 ```bash
 # Run with 1Password CLI for credentials
-op run --env-file .env -- ./test_integration.sh
+op run --env-file .env -- ./scripts/test_integration.sh
 ```
 
 **What it tests:**
