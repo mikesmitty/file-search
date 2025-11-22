@@ -1,6 +1,6 @@
 #!/bin/bash
 # Integration test script for new file-search features
-# Run with: op run --env-file .env -- ./test_integration.sh
+# Run with: op run --env-file .env -- ./scripts/test_integration.sh
 
 set -e  # Exit on error
 
