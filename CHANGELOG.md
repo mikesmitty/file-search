@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.3.2](https://github.com/mikesmitty/file-search/compare/v0.3.1...v0.3.2) (2025-11-23)
+
+
+### Bug Fixes
+
+* handle crash due to typed nil passing ([#35](https://github.com/mikesmitty/file-search/issues/35)) ([fbbf497](https://github.com/mikesmitty/file-search/commit/fbbf497938e6d9ae11696142cf00cfeb76c38168))
+
 ## [0.3.1](https://github.com/mikesmitty/file-search/compare/v0.3.0...v0.3.1) (2025-11-22)
 
 
