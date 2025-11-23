@@ -136,7 +136,7 @@ func NewServer(client GeminiClient, enabledTools []string) *server.MCPServer {
 	// Tool: import_file_to_store
 	if isToolEnabled("import_file_to_store") || isToolEnabled("all") {
 		s.AddTool(mcp.NewTool("import_file_to_store",
-			mcp.WithDescription("Import a file from the Files API into a File Search Store."),
+			mcp.WithDescription("Import a file from the Files API into a File Search Store. Note: This does not preserve the original display name of the file."),
 			mcp.WithString("file_name", mcp.Required(), mcp.Description("The resource name or display name of the file to import.")),
 			mcp.WithString("store_name", mcp.Required(), mcp.Description("The resource name or display name of the store to import into.")),
 		), func(ctx context.Context, request mcp.CallToolRequest) (*mcp.CallToolResult, error) {

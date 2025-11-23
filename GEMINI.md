@@ -41,8 +41,10 @@ This MCP server provides 10 tools for interacting with Gemini File Search. By de
 
 ### Core Tools (Recommended)
 - **`query_knowledge_base`** - Query the knowledge base with optional metadata filtering
-- **`import_file_to_store`** - Import files from Files API into a store
 - **`upload_file`** - Upload and index files directly to a store
+
+### Advanced Tools
+- **`import_file_to_store`** - Import files from Files API into a store. **Note:** The API cannot currently preserve the display name of the file when using this method.
 
 ### List/Discovery Tools
 - **`list_stores`** - List all File Search Stores
