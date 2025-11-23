@@ -2,15 +2,17 @@ package cmd
 
 import (
 	"context"
+	"strings"
 
 	"github.com/mikesmitty/file-search/internal/constants"
 	"github.com/spf13/cobra"
 )
 
 var queryCmd = &cobra.Command{
-	Use:   "query [text]",
-	Short: "Query with optional file search",
-	Args:  cobra.ExactArgs(1),
+	Use:     "query [text...]",
+	Aliases: []string{"q"},
+	Short:   "Query Gemini File Search",
+	Args:    cobra.MinimumNArgs(1),
 	RunE: func(cmd *cobra.Command, args []string) error {
 		ctx := context.Background()
 		client, err := getClient(ctx)
@@ -31,7 +33,11 @@ var queryCmd = &cobra.Command{
 		if queryModel == "" {
 			queryModel = constants.DefaultModel
 		}
-		resp, err := client.Query(ctx, args[0], storeID, queryModel, queryMetadataFilter)
+
+		// Join all arguments to form the query string
+		queryString := strings.Join(args, " ")
+
+		resp, err := client.Query(ctx, queryString, storeID, queryModel, queryMetadataFilter)
 		if err != nil {
 			return err
 		}
