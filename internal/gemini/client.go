@@ -399,8 +399,13 @@ func (c *Client) GetDocument(ctx context.Context, name string) (*genai.Document,
 	return c.client.FileSearchStores.Documents.Get(ctx, name, nil)
 }
 
-func (c *Client) DeleteDocument(ctx context.Context, name string) error {
-	return c.client.FileSearchStores.Documents.Delete(ctx, name, nil)
+func (c *Client) DeleteDocument(ctx context.Context, name string, force bool) error {
+	cfg := &genai.DeleteDocumentConfig{}
+	if force {
+		cfg.Force = new(bool)
+		*cfg.Force = true
+	}
+	return c.client.FileSearchStores.Documents.Delete(ctx, name, cfg)
 }
 
 func (c *Client) DeleteFile(ctx context.Context, name string) error {

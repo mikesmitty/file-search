@@ -26,7 +26,7 @@ type GeminiClient interface {
 	UploadFile(ctx context.Context, path string, opts *gemini.UploadFileOptions) (*genai.File, error)
 	DeleteFile(ctx context.Context, name string) error
 	ResolveDocumentName(ctx context.Context, storeNameOrID, docNameOrID string) (string, error)
-	DeleteDocument(ctx context.Context, name string) error
+	DeleteDocument(ctx context.Context, name string, force bool) error
 	Close()
 }
 
@@ -233,6 +233,7 @@ func NewServer(client GeminiClient, enabledTools []string) *server.MCPServer {
 			mcp.WithDescription("Delete a document from a File Search Store."),
 			mcp.WithString("store_name", mcp.Required(), mcp.Description("The resource name or display name of the store.")),
 			mcp.WithString("document_name", mcp.Required(), mcp.Description("The resource name or display name of the document.")),
+			mcp.WithBoolean("force", mcp.Description("Force delete even if the document contains chunks.")),
 		), func(ctx context.Context, request mcp.CallToolRequest) (*mcp.CallToolResult, error) {
 			args, ok := request.Params.Arguments.(map[string]interface{})
 			if !ok {
@@ -246,6 +247,7 @@ func NewServer(client GeminiClient, enabledTools []string) *server.MCPServer {
 			if !ok {
 				return mcp.NewToolResultError("document_name must be a string"), nil
 			}
+			force := getBoolArg(args, "force")
 
 			// Resolve store
 			storeID, err := client.ResolveStoreName(ctx, storeName)
@@ -259,7 +261,7 @@ func NewServer(client GeminiClient, enabledTools []string) *server.MCPServer {
 				return mcp.NewToolResultError(fmt.Sprintf("Failed to resolve document name: %v", err)), nil
 			}
 
-			err = client.DeleteDocument(ctx, docID)
+			err = client.DeleteDocument(ctx, docID, force)
 			if err != nil {
 				return mcp.NewToolResultError(err.Error()), nil
 			}
