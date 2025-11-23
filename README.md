@@ -43,6 +43,26 @@ Alternatively, you can pass it as a flag `--api-key` or configure it in `$HOME/.
 
 > [!IMPORTANT]
 > **API Usage Fees**: Using the Gemini and the Gemini File Search APIs can involve costs for embeddings with paid tier API keys. The FileSearch API is free for free tier users, but note that Gemini queries may be subject to use for product improvement. I'm not a lawyer, so be sure to review the [Gemini API Pricing](https://ai.google.dev/gemini-api/docs/pricing) page better to understand the potential associated fees.
+## Quick Start Guide
+
+Here is a typical workflow to get you started with the CLI:
+
+1.  **Create a Store**:
+    ```bash
+    file-search store create "My Knowledge Base"
+    ```
+
+2.  **Upload a Document**:
+    This uploads a local file and adds it to your store in one step.
+    ```bash
+    file-search file upload ./path/to/my-doc.pdf --store "My Knowledge Base"
+    ```
+
+3.  **Query**:
+    Ask a question about your documents.
+    ```bash
+    file-search query "What are the key points in the document?" --store "My Knowledge Base"
+    ```
 
 ## CLI Usage
 
@@ -103,6 +123,14 @@ Perform a semantic search against your knowledge base.
 file-search query "What is the max voltage?" --store "My Knowledge Base"
 ```
 
+### Operations
+Manage long-running operations.
+
+```bash
+# Get operation status
+file-search operation get <operation-name>
+```
+
 ## MCP Server Integration
 
 This tool functions as a Model Context Protocol (MCP) server, allowing AI assistants to access your documents.
@@ -113,11 +141,26 @@ To use with Antigravity, ensure the `file-search` binary is in your path or refe
 *(Installation details for Antigravity to be added)*
 
 ### Gemini
-To enable the extension in Gemini:
 
-1. Ensure `gemini-extension.json` is present in your project root (or the directory where you run Gemini).
-2. The manifest should point to the `file-search` binary.
-3. When you start a conversation, Gemini will detect the extension and allow you to use the `@file-search` tool (or whatever name is configured).
+#### Option 1: As an MCP Server
+To install `file-search` as an MCP server in Gemini for the current project:
+
+```bash
+gemini mcp add -e GEMINI_API_KEY=your-api-key file-search file-search mcp
+```
+
+To install it at the user-level scope (available across all projects):
+
+```bash
+gemini mcp add -s user -e GEMINI_API_KEY=your-api-key file-search file-search mcp
+```
+
+#### Option 2: As an Extension (Project-based)
+To install the extension for a specific project:
+
+```bash
+gemini extensions install https://github.com/mikesmitty/file-search
+```
 
 ### Claude Code
 To use with Claude Desktop or Claude Code, add the server configuration to your `claude_desktop_config.json`:
@@ -135,3 +178,17 @@ To use with Claude Desktop or Claude Code, add the server configuration to your 
   }
 }
 ```
+
+### Usage
+
+Once installed, the tools provided by `file-search` are automatically available to Gemini. You can interact with your knowledge base using natural language.
+
+**Examples:**
+
+*   **Creating a Store:** "Create a new file search store called Skynet."
+*   **Listing Stores:** "List all my file search stores."
+*   **Uploading:** "Upload the file `spec-v1.pdf` to the Skynet store."
+*   **Listing Documents:** "Show me all documents in the Skynet store."
+*   **Querying:** "Search the Skynet knowledge base for information about the T-800's power source."
+
+Gemini will intelligently select the appropriate tool (`query_knowledge_base`, `list_stores`, `upload_file`, etc.) based on your request.
