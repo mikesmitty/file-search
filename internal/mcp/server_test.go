@@ -25,7 +25,7 @@ type MockGeminiClient struct {
 	UploadFileFunc          func(ctx context.Context, path string, opts *gemini.UploadFileOptions) (*genai.File, error)
 	DeleteFileFunc          func(ctx context.Context, name string) error
 	ResolveDocumentNameFunc func(ctx context.Context, storeNameOrID, docNameOrID string) (string, error)
-	DeleteDocumentFunc      func(ctx context.Context, name string) error
+	DeleteDocumentFunc      func(ctx context.Context, name string, force bool) error
 	CloseFunc               func()
 }
 
@@ -65,8 +65,8 @@ func (m *MockGeminiClient) DeleteFile(ctx context.Context, name string) error {
 func (m *MockGeminiClient) ResolveDocumentName(ctx context.Context, storeNameOrID, docNameOrID string) (string, error) {
 	return m.ResolveDocumentNameFunc(ctx, storeNameOrID, docNameOrID)
 }
-func (m *MockGeminiClient) DeleteDocument(ctx context.Context, name string) error {
-	return m.DeleteDocumentFunc(ctx, name)
+func (m *MockGeminiClient) DeleteDocument(ctx context.Context, name string, force bool) error {
+	return m.DeleteDocumentFunc(ctx, name, force)
 }
 func (m *MockGeminiClient) Close() {
 	if m.CloseFunc != nil {

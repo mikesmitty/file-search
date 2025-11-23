@@ -704,6 +704,7 @@ func main() {
 
 	var docDelStore string
 	var docDelStoreID string
+	var docDelForce bool
 	docDelCmd := &cobra.Command{
 		Use:     "delete [name]",
 		Aliases: []string{"rm", "del"},
@@ -740,7 +741,7 @@ func main() {
 				}
 			}
 
-			err = client.DeleteDocument(ctx, docID)
+			err = client.DeleteDocument(ctx, docID, docDelForce)
 			if err != nil {
 				return err
 			}
@@ -753,6 +754,7 @@ func main() {
 	}
 	docDelCmd.Flags().StringVar(&docDelStore, "store", "", "Store display name (optional, for name resolution)")
 	docDelCmd.Flags().StringVar(&docDelStoreID, "store-id", "", "Store resource ID (optional, for name resolution)")
+	docDelCmd.Flags().BoolVar(&docDelForce, "force", false, "Force delete even if document contains chunks")
 	docDelCmd.RegisterFlagCompletionFunc("store", func(cmd *cobra.Command, args []string, toComplete string) ([]string, cobra.ShellCompDirective) {
 		return getCompleter().GetStoreNames(), cobra.ShellCompDirectiveNoFileComp
 	})
