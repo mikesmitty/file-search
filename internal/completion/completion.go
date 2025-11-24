@@ -33,7 +33,7 @@ func (c *Completer) ensureClient(ctx context.Context) (*gemini.Client, error) {
 		return c.client, nil
 	}
 
-	client, err := gemini.NewClient(ctx, c.apiKey)
+	client, err := gemini.NewClient(ctx, c.apiKey, nil)
 	if err != nil {
 		return nil, err
 	}

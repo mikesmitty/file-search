@@ -3,6 +3,7 @@ package gemini
 import (
 	"context"
 	"fmt"
+	"net/http"
 	"strings"
 	"time"
 
@@ -34,14 +35,15 @@ type Client struct {
 	client *genai.Client
 }
 
-func NewClient(ctx context.Context, apiKey string) (*Client, error) {
+func NewClient(ctx context.Context, apiKey string, httpClient *http.Client) (*Client, error) {
 	if apiKey == "" {
 		return nil, fmt.Errorf("GEMINI_API_KEY not set")
 	}
 
 	cfg := &genai.ClientConfig{
-		APIKey:  apiKey,
-		Backend: genai.BackendGeminiAPI,
+		APIKey:     apiKey,
+		Backend:    genai.BackendGeminiAPI,
+		HTTPClient: httpClient,
 	}
 
 	client, err := genai.NewClient(ctx, cfg)

@@ -20,7 +20,7 @@ var mcpCmd = &cobra.Command{
 
 		var client mcp.GeminiClient
 		if key != "" {
-			c, err := gemini.NewClient(ctx, key)
+			c, err := gemini.NewClient(ctx, key, nil)
 			if err != nil {
 				return err
 			}

@@ -1,0 +1,137 @@
+---
+version: 2
+interactions:
+    - id: 0
+      request:
+        proto: HTTP/1.1
+        proto_major: 1
+        proto_minor: 1
+        content_length: 0
+        transfer_encoding: []
+        trailer: {}
+        host: generativelanguage.googleapis.com
+        remote_addr: ""
+        request_uri: ""
+        body: ""
+        form: {}
+        headers:
+            Content-Type:
+                - application/json
+            User-Agent:
+                - google-genai-sdk/1.36.0 gl-go/go1.25.4
+            X-Goog-Api-Client:
+                - google-genai-sdk/1.36.0 gl-go/go1.25.4
+        url: https://generativelanguage.googleapis.com/v1beta/fileSearchStores
+        method: GET
+      response:
+        proto: HTTP/2.0
+        proto_major: 2
+        proto_minor: 0
+        transfer_encoding: []
+        trailer: {}
+        content_length: -1
+        uncompressed: true
+        body: |
+            {
+              "fileSearchStores": [
+                {
+                  "name": "fileSearchStores/rp2350-jyo8o92qxss0",
+                  "displayName": "rp2350",
+                  "createTime": "2025-11-21T16:56:00.767282Z",
+                  "updateTime": "2025-11-21T16:56:00.767282Z",
+                  "activeDocumentsCount": "21",
+                  "sizeBytes": "11989051"
+                }
+              ]
+            }
+        headers:
+            Alt-Svc:
+                - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+            Content-Type:
+                - application/json; charset=UTF-8
+            Date:
+                - Mon, 24 Nov 2025 00:38:33 GMT
+            Server:
+                - scaffolding on HTTPServer2
+            Server-Timing:
+                - gfet4t7; dur=109
+            Vary:
+                - Origin
+                - X-Origin
+                - Referer
+            X-Content-Type-Options:
+                - nosniff
+            X-Frame-Options:
+                - SAMEORIGIN
+            X-Xss-Protection:
+                - "0"
+        status: 200 OK
+        code: 200
+        duration: 121.213041ms
+    - id: 1
+      request:
+        proto: HTTP/1.1
+        proto_major: 1
+        proto_minor: 1
+        content_length: 0
+        transfer_encoding: []
+        trailer: {}
+        host: generativelanguage.googleapis.com
+        remote_addr: ""
+        request_uri: ""
+        body: ""
+        form: {}
+        headers:
+            Content-Type:
+                - application/json
+            User-Agent:
+                - google-genai-sdk/1.36.0 gl-go/go1.25.4
+            X-Goog-Api-Client:
+                - google-genai-sdk/1.36.0 gl-go/go1.25.4
+        url: https://generativelanguage.googleapis.com/v1beta/fileSearchStores
+        method: GET
+      response:
+        proto: HTTP/2.0
+        proto_major: 2
+        proto_minor: 0
+        transfer_encoding: []
+        trailer: {}
+        content_length: -1
+        uncompressed: true
+        body: |
+            {
+              "fileSearchStores": [
+                {
+                  "name": "fileSearchStores/rp2350-jyo8o92qxss0",
+                  "displayName": "rp2350",
+                  "createTime": "2025-11-21T16:56:00.767282Z",
+                  "updateTime": "2025-11-21T16:56:00.767282Z",
+                  "activeDocumentsCount": "21",
+                  "sizeBytes": "11989051"
+                }
+              ]
+            }
+        headers:
+            Alt-Svc:
+                - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+            Content-Type:
+                - application/json; charset=UTF-8
+            Date:
+                - Mon, 24 Nov 2025 00:38:34 GMT
+            Server:
+                - scaffolding on HTTPServer2
+            Server-Timing:
+                - gfet4t7; dur=121
+            Vary:
+                - Origin
+                - X-Origin
+                - Referer
+            X-Content-Type-Options:
+                - nosniff
+            X-Frame-Options:
+                - SAMEORIGIN
+            X-Xss-Protection:
+                - "0"
+        status: 200 OK
+        code: 200
+        duration: 133.534583ms
