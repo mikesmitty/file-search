@@ -161,7 +161,7 @@ Support glob patterns and multiple files for upload and import.
 **Status**: Completed
 **Goal**: Enable deterministic and end-to-end testing.
 
-- [ ] Implement Record/Replay tests using `go-vcr` to mock API calls.
+- [x] Implement Record/Replay tests using `go-vcr` to mock API calls.
 - [ ] Create End-to-End (E2E) test suite for full flow verification (provision -> upload -> query -> delete).
 - [x] Update CI workflow to test against multiple Go versions (matrix: stable, oldstable, go.mod?).
 

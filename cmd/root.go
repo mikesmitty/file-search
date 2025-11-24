@@ -164,7 +164,7 @@ func getClient(ctx context.Context) (*gemini.Client, error) {
 	if err != nil {
 		return nil, err
 	}
-	return gemini.NewClient(ctx, key)
+	return gemini.NewClient(ctx, key, nil)
 }
 
 // printOutput handles formatting and printing of results

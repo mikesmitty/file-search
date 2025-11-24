@@ -1,0 +1,378 @@
+---
+version: 2
+interactions:
+    - id: 0
+      request:
+        proto: HTTP/1.1
+        proto_major: 1
+        proto_minor: 1
+        content_length: 0
+        transfer_encoding: []
+        trailer: {}
+        host: generativelanguage.googleapis.com
+        remote_addr: ""
+        request_uri: ""
+        body: ""
+        form: {}
+        headers:
+            Content-Type:
+                - application/json
+            User-Agent:
+                - google-genai-sdk/1.36.0 gl-go/go1.25.4
+            X-Goog-Api-Client:
+                - google-genai-sdk/1.36.0 gl-go/go1.25.4
+        url: https://generativelanguage.googleapis.com/v1beta/fileSearchStores
+        method: GET
+      response:
+        proto: HTTP/2.0
+        proto_major: 2
+        proto_minor: 0
+        transfer_encoding: []
+        trailer: {}
+        content_length: -1
+        uncompressed: true
+        body: |
+            {
+              "fileSearchStores": [
+                {
+                  "name": "fileSearchStores/rp2350-jyo8o92qxss0",
+                  "displayName": "rp2350",
+                  "createTime": "2025-11-21T16:56:00.767282Z",
+                  "updateTime": "2025-11-21T16:56:00.767282Z",
+                  "activeDocumentsCount": "21",
+                  "sizeBytes": "11989051"
+                }
+              ]
+            }
+        headers:
+            Alt-Svc:
+                - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+            Content-Type:
+                - application/json; charset=UTF-8
+            Date:
+                - Mon, 24 Nov 2025 00:38:34 GMT
+            Server:
+                - scaffolding on HTTPServer2
+            Server-Timing:
+                - gfet4t7; dur=122
+            Vary:
+                - Origin
+                - X-Origin
+                - Referer
+            X-Content-Type-Options:
+                - nosniff
+            X-Frame-Options:
+                - SAMEORIGIN
+            X-Xss-Protection:
+                - "0"
+        status: 200 OK
+        code: 200
+        duration: 135.68825ms
+    - id: 1
+      request:
+        proto: HTTP/1.1
+        proto_major: 1
+        proto_minor: 1
+        content_length: 191
+        transfer_encoding: []
+        trailer: {}
+        host: generativelanguage.googleapis.com
+        remote_addr: ""
+        request_uri: ""
+        body: |
+            {"contents":[{"parts":[{"text":"What is in this document?"}],"role":"user"}],"generationConfig":{},"tools":[{"fileSearch":{"fileSearchStoreNames":["fileSearchStores/rp2350-jyo8o92qxss0"]}}]}
+        form: {}
+        headers:
+            Content-Type:
+                - application/json
+            User-Agent:
+                - google-genai-sdk/1.36.0 gl-go/go1.25.4
+            X-Goog-Api-Client:
+                - google-genai-sdk/1.36.0 gl-go/go1.25.4
+        url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent
+        method: POST
+      response:
+        proto: HTTP/2.0
+        proto_major: 2
+        proto_minor: 0
+        transfer_encoding: []
+        trailer: {}
+        content_length: -1
+        uncompressed: true
+        body: |
+            {
+              "candidates": [
+                {
+                  "content": {
+                    "parts": [
+                      {
+                        "text": "This document is the RP2350 Datasheet, which provides detailed information about the RP2350 chip. It covers various aspects of the chip's architecture, functionality, and programming model.\n\nKey sections and topics within the document include:\n*   **Colophon and Legal Disclaimers**: Information about copyright, licensing (Creative Commons Attribution-NoDerivatives 4.0 International), and legal disclaimers regarding the use of Raspberry Pi products.\n*   **Introduction**: Details about the chip itself, its pinout, and the rationale behind its name.\n*   **System Bus**: Descriptions of the bus fabric, bus priority, security filtering, atomic register access, APB bridge, and address map (ROM, XIP, SRAM, APB/AHB registers).\n*   **Processor Subsystem**: Information about the SIO (Secure and Non-secure SIO), CPUID, GPIO control, hardware spinlocks, inter-processor FIFOs (Mailboxes), doorbells, integer divider, RISC-V platform timer, TMDS encoder, and interpolator.\n*   **Boot Process**: Covers boot sequences, boot modes, flash boot, metadata blocks, and various boot scenarios like secure boot, signed images, A/B booting, and custom/OTP bootloaders.\n*   **Power Management**: Details on power supplies (IOV00, QSPI_IOVDD, DVDD, USB_OTP_VDD, ADC_AVDD, VREG_VIN, VREG_AVDD), power supply sequencing, core power domains, power states and transitions, and the core voltage regulator. It also discusses power reduction strategies.\n*   **Resets**: An overview of chip-level and system resets, including sources, destinations, and interactions with the watchdog.\n*   **Peripherals and Modules**: Detailed sections on various peripherals and modules, including:\n    *   Watchdog\n    *   Always-on timer\n    *   HSTX (Data FIFO, output shift register, bit crossbar, clock generator, command expander, PIO-to-HSTX coupled mode)\n    *   TRNG (True Random Number Generator)\n    *   SHA-256 accelerator\n    *   QSPI memory interface (QMI)\n    *   System Control Registers (SYSINFO, SYSCFG, TBMAN, BUSCTRL)\n*   **OTP (One-Time Programmable) Memory**: Covers the OTP address map, guarded reads, OTP IP details, hardware architecture, critical flags, page locks, error correction code (ECC), and device decommissioning.\n\nThe document also provides lists of registers for many of the described modules."
+                      }
+                    ],
+                    "role": "model"
+                  },
+                  "finishReason": "STOP",
+                  "index": 0,
+                  "groundingMetadata": {
+                    "groundingChunks": [
+                      {
+                        "retrievedContext": {
+                          "title": "rp2350-datasheet-2025-07-29 - 000002 - Colophon.pdf",
+                          "text": "--- PAGE 1 ---\n\nRP2350 Datasheet\n\nColophon\n\n2023-2025 Raspberry Pi Ltd\n\nThis documentation is licensed under a Creative Commons Attribution-NoDerivatives 4.0 International (CC BY-ND).\n Portions Copyright 2019 Synopsys, Inc.\n\nAll rights reserved. Used with permission. Synopsys & DesignWare are registered trademarks of Synopsys, Inc.\n Portions Copyright © 2000-2001, 2005, 2007, 2009, 2011-2012, 2016 Arm Limited.\n\nAll rights reserved. Used with permission.\n\nbuild-date: 2025-07-29\n\nbuild-version: d126e9e-clean\n\nLegal disclaimer notice\n\nTECHNICAL AND RELIABILITY DATA FOR RASPBERRY PI PRODUCTS (INCLUDING DATASHEETS) AS MODIFIED FROM\n TIME TO TIME (\"RESOURCES\") ARE PROVIDED BY RASPBERRY PI LTD (\"RPL\") \"AS IS\" AND ANY EXPRESS OR IMPLIED\n WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS\n\nFOR A PARTICULAR PURPOSE ARE DISCLAIMED. TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW IN NO\n EVENT SHALL RPL BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL\n DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,\n DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER\n IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF\n THE USE OF THE RESOURCES, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.\n\nRPL reserves the right to make any enhancements, improvements, corrections",
+                          "fileSearchStore": "fileSearchStores/rp2350-jyo8o92qxss0"
+                        }
+                      },
+                      {
+                        "retrievedContext": {
+                          "title": "rp2350-datasheet-2025-07-29 - 000002 - Colophon.pdf",
+                          "text": "and other medical devices), in which the failure of the products could lead directly to death, personal injury or\n severe physical or environmental damage (\"High Risk Activities\"). RPL specifically disclaims any express or implied\n warranty of fitness for High Risk Activities and accepts no liability for use or inclusions of Raspberry Pi products in High\n Risk Activities.\n\nRaspberry Pi products are provided subject to RPL's Standard Terms. RPL's provision of the RESOURCES does not\n expand or otherwise modify RPL's Standard Terms including but not limited to the disclaimers and warranties\n expressed in them.\n\nLegal disclaimer notice\n\n1\n\n\n--- PAGE 2 ---\n\nRP2350 Datasheet\n\nTable of contents\n\n\n\"Colophon\n\",\"1\n\"\r\n\"Legal disclaimer notice\n\",\"1\n\"\r\n\"1. Introduction.\n\",\"13\n\"\r\n\"1.1. The chip\n\",\"14\n\"\r\n\"1.2. Pinout reference\n\",\"15\n\"\r\n\"1.2.1. Pin locations\n\",\"15\n\"\r\n\"1.2.2. Pin descriptions\n\",\"16\n\"\r\n\"1.2.3. GPIO functions (Bank 0)\n\",\"17\n\"\r\n\"1.2.4. GPIO functions (Bank 1)\n\",\"21\n\"\r\n\"1.3. Why is the chip called RP2350?\n\",\"22\n\"\r\n\"1.4. Version History\n\",\"23\n\"\r\n\"2. System bus\n\",\"24\n\"\r\n\"2.1. Bus fabric\n\",\"24\n\"\r\n\"2.1.1. Bus priority\n\",\"25\n\"\r\n\"2.1.2\n\n\n. Bus security filtering\n\",\"25\n\"\r\n\"2.1.3. Atomic register access\n\",\"26\n\"\r\n\"2.1.4. APB bridge\n\",\"26\n\"\r\n\"2.1.5. Narrow 10 register writes\n\",\"27\n\"\r\n\"2.1.6. Global Exclusive Monitor\n\",\"28\n\"\r\n\"2.1.7. Bus performance counters\n\",\"30\n\"\r\n\"2.2. Address map\n\",\"30\n\"\r\n\"2.2.1. ROM\n\",\"30\n\"\r\n\"2.2.2. XIP\n\",\"30\n\"\r\n\"2.2.3. SRAM\n\",\"31\n\"\r\n\"2.2.4. APB registers\n\",\"31\n\"\r\n\"2.2.5. AHB registers\n\",\"33\n\"\r\n\"2.2.6. Core-local peripherals (SIO)\n\",\"33\n\"\r\n\"2.2.7. Cortex-M33 private peripherals\n\",\"34\n\"\r\n\"3.\n\n\nProcessor subsystem\n\n\n3.1. SIO\n\",\"35\n\n\n36\n\"\r\n\"3.1.1. Secure and Non-secure SIO\n\",\"37\n\"\r\n\"3.1.2. CPUID\n\",\"38\n\"\r\n\"3.1.3. GPIO control\n\",\"39\n\"\r\n\"3.1.4. Hardware spinlocks\n\",\"41\n\"\r\n\"3.1.5. Inter-processor FIFOs (Mailboxes)\n 3.1.6. Doorbells.\n\",\"42\n\n\n42\n\"\r\n\"3.1.7. Integer divider.\n\n\n3.1.8. RISC-V platform timer\n\",\"43\n 43\n\"\r\n\"3.1.9. TMDS encoder\n\",\"44\n\"\r\n\"3.1.10. Interpolator\n\",\"44\n\"\r\n\"3.1.11. List of registers\n\",\"54\n\"\r\n\"3.2. Interrupts\n\",\"82\n\"\r\n\"3.2.1. Non-maskable interrupt (NMI)\n\",\"83\n\"\r\n\"3.2.2. Further reading",
+                          "fileSearchStore": "fileSearchStores/rp2350-jyo8o92qxss0"
+                        }
+                      },
+                      {
+                        "retrievedContext": {
+                          "title": "rp2350-datasheet-2025-07-29 - 000036 - Chapter 3. Processor subsystem.pdf",
+                          "text": "core.\n Clearing all bits will cause that core's doorbell interrupt to\n deassert. Since the usual order of events is for software to send\n events using DOORBELL_OUT_SET, and acknowledge incoming\n events by writing to DOORBELL_IN_CLR, this register should be\n\"\r\n,,\"used with caution to avoid race conditions.\n\"\r\n,,\"Reading returns the status of the doorbells currently asserted on\n\"\r\n,,\"the other core, i.e. is equivalent to that core reading its own\n DOORBELL IN status.\n\"\r\n\"0x188\n\",\"DOORBELL IN SET\n\",\"Write 1s to trigger doorbell interrupts on this core. Read to get\n status of doorbells currently asserted on this core.\n\"\r\n\"0x18c\n\",\"DOORBELL IN CLR\n\",\"Check and acknowledge doorbells posted to this core. This\n core's doorbell interrupt is asserted when any bit in this register\n is 1.\n Write 1 to each bit to clear that bit. The doorbell interrupt\n deasserts once all bits are cleared. Read to get status of\n doorbells currently asserted on this core.\n\"\r\n\"0x190\n\",\"PERI NONSEC\n\",\"Detach certain core-local peripherals from Secure SIO, and\n attach them to Non-secure SIO, so that Non-secure software can\n use them. Attempting to access one of these peripherals from\n the Secure SIO when it is attached to the Non-secure SIO, or vice\n versa, will generate a bus error.\n\"\r\n,,\"This register is per-core, and is only present on the Secure SIO.\n\"\r\n,,\"Most SIO hardware",
+                          "fileSearchStore": "fileSearchStores/rp2350-jyo8o92qxss0"
+                        }
+                      },
+                      {
+                        "retrievedContext": {
+                          "title": "rp2350-datasheet-2025-07-29 - 000002 - Colophon.pdf",
+                          "text": "a stuck interface\n\",\"417\n\"\r\n\"5.8.5. Requirements for UART boot binaries.\n\",\"418\n\"\r\n\"5.9. Metadata block details\n\",\"418\n\"\r\n\"5.9.1. Blocks and block loops\n\",\"418\n\"\r\n\"5.9.2. Common block items\n\",\"419\n\"\r\n\"5.9.3. Image definition items\n\",\"421\n\"\r\n\"5.9.4. Partition table items\n\",\"425\n\"\r\n\"5.9.5. Minimum viable image metadata\n\",\"428\n\"\r\n\"5.10. Example boot scenarios\n\",\"429\n\"\r\n\"5.10.1. Secure boot\n\",\"429\n\"\r\n\"5.10.2. Signed images\n\",\"430\n\"\r\n\"5.10.3. Packaged binaries\n\",\"433\n\"\r\n\"5.10.4. A/B booting\n\",\"433\n\"\r\n\"5.10.5. A/B booting with owned partitions\n\",\"435\n\"\n\nTable of contents\n\n4\n\n\n--- PAGE 5 ---\n\nRP2350 Datasheet\n\n\n\"5.10.6. Custom bootloader\n\",\"437\n\"\r\n\"5.10.7. OTP bootloader\n\",\"439\n\"\r\n\"5.10.8. Rollback versions and bootloaders\n\",\"440\n\"\r\n\"6. Power\n\",\"441\n\"\r\n\"6.1. Power supplies\n\",\"441\n\"\r\n\"6.1.1. Digital IO supply (10V00)\n\",\"441\n\"\r\n\"6.1.2. QSPI IO supply (QSPI_IOVDD)\n\",\"441\n\"\r\n\"6.1.3. Digital core supply (DVDD)\n\",\"441\n\"\r\n\"6.1.4. USB PHY and OTP supply (USB_0TP_VDD)\n\",\"442\n\"\r\n\"6.1.5. ADC supply (ADC_AVDD)\n\",\"442\n\"\r\n\"6.1.6. Core voltage regulator input supply (VREG_VIN)\n\",\"442\n\"\r\n\"6.1.7. On-chip voltage regulator analogue supply (VREG_AVDD)\n\",\"442\n\"\r\n\"6.1.8. Power supply sequencing\n\",\"443\n\"\r\n\"6.2. Power management.\n\",\"443\n\"\r\n\"6.2.1. Core power domains\n\",\"443\n\"\r\n\"6.2.2. Power states\n\",\"444\n\"\r\n\"6.2.3. Power state transitions\n\",\"445\n\"\r\n\"6.3. Core voltage regulator\n\",\"448\n\"\r\n\"6.3.1. Operating modes\n 6.3.2. Software control\n\",\"448\n\n\n449\n\"\r\n\"6.3.3. Power Manager control\n\",\"449\n\"\r\n\"6.3.4. Status\n\",\"450\n\"\r\n\"6.3.5. Current limit\n\",\"450\n\"\r\n\"6.3.6. Over temperature protection\n\",\"450\n\"\r\n\"6.3.7. Application circuit\n\",\"450\n\"\r\n\"6.3.8. External components and PCB layout requirements.\n\",\"452\n\"\r\n\"6.3.9. List of registers\n\",\"457\n\"\r\n\"6.4. Power management (POWMAN) registers\n\",\"457\n\"\r\n\"6.5. Power reduction strategies\n\",\"488\n\"\r\n\"6.5.1. Toplevel -clock gates.\n\",\"489\n\"\r\n\"6.5.2. SLEEP state\n 6.5.3. DORMANT state\n\",\"489\n\n\n489\n\"\r\n\"6.5.4. Memory periphery power down\n 6.5.5. Full memory power down\n\",\"490\n\n\n490\n\"\r\n\"6.5.6. Programmer's model\n\",\"491\n\"\r\n\"7. Resets\n\",\"494\n\"\r\n\"7.1. Overview\n . Changes from RP2040\n\n\n7.2\n\",\"494\n\n\n494\n\"\r\n\"7.3. Chip-level resets\n 7.3.1. Chip-level reset table\n 7.3.2. Chip-level reset destinations\n\",\"495\n\n\n495\n\n\n496\n\"\r\n\"7.3.3. Chip-level reset sources\n\",\"496\n\"\r\n\"7.4. System resets (Power-on State Machine)\n 7.4.1. Reset sequence\n\n\n\",\"497\n\n\n498\n\"\r\n\"7.4.2. Register control\n\",\"499\n\"\r\n\"7.4.3. Interaction with watchdog\n\",\"499\n\"\r\n\"7.4.4.\n\n\nList of registers\n\",\"499\n\"\r\n\"7.5. Subsystem resets\n\",\"503\n\"\r\n\"7.5.1. Overview\n\",\"503\n\"\r\n\"7.5.2.\n\n\nProgrammer's model.\n .",
+                          "fileSearchStore": "fileSearchStores/rp2350-jyo8o92qxss0"
+                        }
+                      },
+                      {
+                        "retrievedContext": {
+                          "title": "rp2350-datasheet-2025-07-29 - 000002 - Colophon.pdf",
+                          "text": "Watchdog\n\",\"1193\n\"\r\n\"12.9.1. Overview\n\",\"1193\n\"\r\n\"12.9.2\n\n\n. Changes from RP2040\n\",\"1193\n\"\r\n\"12.9.3. Watchdog counter\n\",\"1193\n\"\r\n\"12.9.4. Control watchdog reset levels\n\",\"1194\n\"\r\n\"12.9.5. Scratch registers\n\",\"1194\n\"\r\n\"12.9.6. Programmer's model\n\",\"1194\n\"\r\n\"12.9.7. List of registers\n\",\"1196\n\"\r\n\"12.10. Always-on timer\n\",\"1197\n\"\r\n\"12.10.1. Overview\n\",\"1197\n\"\r\n\"12.10.2. Changes from RP2040\n\",\"1198\n\"\r\n\"12.10.3. Accessing the AON Timer\n\",\"1198\n\"\r\n\"12.10.4. Using the alarm\n\",\"1198\n\"\r\n\"12.10.5. Selecting the AON Timer tick source\n\",\"1199\n\"\r\n\"12.10.6. Synchronising the AON timer to an external 1Hz clock\n\",\"1201\n\"\r\n\"12.10.7. Using an external clock or tick from GPIO\n\",\"1201\n\"\r\n\"12.10.8. Using a tick faster than 1ms\n\",\"1201\n\"\r\n\"12.10.9. List of registers\n\",\"1202\n\"\r\n\"12.11. HSTX\n\",\"1202\n\"\r\n\"12.11.1. Data FIFO\n\",\"1203\n\"\r\n\"12.11.2. Output shift register\n\",\"1203\n\"\r\n\"12.11.3. Bit crossbar\n\",\"1204\n\"\r\n\"12.11.4. Clock generator.\n\",\"1205\n\"\r\n\"12.11.5. Command expander\n\",\"1206\n\"\r\n\"12.11.6. PIO-to-HSTX coupled mode\n\",\"1208\n\"\r\n\"12.11.7. List of control registers\n\",\"1208\n\"\r\n\"12.11.8. List of FIFO registers\n\",\"1212\n\"\r\n\"12.12. TRNG\n\",\"1212\n\"\r\n\"12.12.1. Overview.\n\",\"1212\n\"\r\n\"12.12.2. Configuration.\n\",\"1213\n\"\r\n\"12.12.3. Operation\n\",\"1213\n\"\r\n\"12.12.4. Caveats\n\",\"1214\n\"\r\n\"12.12.5. List of registers\n\",\"1215\n\"\n\n9\n\n\n--- PAGE 10 ---\n\nRP2350 Datasheet\n\n\n\"12.13. SHA-256 accelerator\n\",\"1221\n\"\r\n\"12.13.1. Message padding\n\",\"1222\n\"\r\n\"12.13.2. Throughput\n\",\"1222\n\"\r\n\"12.13.3. Data size and endianness\n\",\"1222\n\"\r\n\"12.13.4. DMA DREQ interface\n\",\"1222\n\"\r\n\"12.13.5. List of registers\n\",\"1223\n\"\r\n\"12.14. QSPI memory interface (QMI)\n\",\"1226\n\"\r\n\"12.14.1. Overview\n\",\"1226\n\"\r\n\"12.14.2. QSPI transfers\n\",\"1228\n\"\r\n\"12.14.3. Timing.\n\",\"1231\n\"\r\n\"12.14.4. Address translation\n\",\"1234\n\"\r\n\"12.14.5. Direct mode\n\",\"1235\n\"\r\n\"12.14.6List of registers\n\n\n.\n\",\"1236\n\"\r\n\"12.15. System Control Registers\n\",\"1249\n\"\r\n\"12.15.1. SYSINFO\n\",\"1249\n\"\r\n\"12.15.2. SYSCFG\n\",\"1251\n\"\r\n\"12.15.3. TBΜΑΝ\n\",\"1254\n\"\r\n\"12.15.4. BUSCTRL\n\",\"1255\n\"\r\n\"13. OTP\n\",\"1268\n\"\r\n\"13.1. OTP address map.\n\",\"1268\n\"\r\n\"13.1.1. Guarded reads\n\",\"1269\n\"\r\n\"13.2. Background: OTP IP details.\n\",\"1269\n\"\r\n\"13.3. Background: OTP hardware architecture\n 13.3.1. Lock shim.\n 13.3.2. External interfaces\n\",\"1270\n\n\n1270\n\n\n1271\n\"\r\n\"13.3.3. OTP boot oscillator\n . Power-up state\n\n\n13.3.4machine.\n\",\"1272\n\n\n1272\n\"\r\n\"13.4. Critical flags\n\",\"1273\n\"\r\n\"13.5. Page locks\n 13.5.1. Lock progression.\n 13.5.2. OTP access keys.\n 13.5.3. Lock encoding in OTP\n\n\n\",\"1274\n\n\n1274\n\n\n1275\n\n\n1276\n\"\r\n\r\n\"13.5.4. Special pages.\n\",\"1276\n\"\r\n\"13.5.5. Permissions of blank devices\n\",\"1276\n\"\r\n\"13.6. Error Correction Code (ECC)\n 13.6.1. Bit repair by polarity (\n 13.6.2. Modified Hamming ECC\n\n\nBRP)\n\",\"1277\n\n\n1277\n\n\n1278\n\"\r\n\"13.7. Device decommissioning (RMA)\n\",\"1279\n\"\r\n\"13.8. Imaging",
+                          "fileSearchStore": "fileSearchStores/rp2350-jyo8o92qxss0"
+                        }
+                      }
+                    ],
+                    "groundingSupports": [
+                      {
+                        "segment": {
+                          "endIndex": 97,
+                          "text": "This document is the RP2350 Datasheet, which provides detailed information about the RP2350 chip."
+                        },
+                        "groundingChunkIndices": [
+                          0
+                        ]
+                      },
+                      {
+                        "segment": {
+                          "startIndex": 191,
+                          "endIndex": 452,
+                          "text": "Key sections and topics within the document include:\n*   **Colophon and Legal Disclaimers**: Information about copyright, licensing (Creative Commons Attribution-NoDerivatives 4.0 International), and legal disclaimers regarding the use of Raspberry Pi products."
+                        },
+                        "groundingChunkIndices": [
+                          0,
+                          1
+                        ]
+                      },
+                      {
+                        "segment": {
+                          "startIndex": 453,
+                          "endIndex": 552,
+                          "text": "*   **Introduction**: Details about the chip itself, its pinout, and the rationale behind its name."
+                        },
+                        "groundingChunkIndices": [
+                          1
+                        ]
+                      },
+                      {
+                        "segment": {
+                          "startIndex": 553,
+                          "endIndex": 727,
+                          "text": "*   **System Bus**: Descriptions of the bus fabric, bus priority, security filtering, atomic register access, APB bridge, and address map (ROM, XIP, SRAM, APB/AHB registers)."
+                        },
+                        "groundingChunkIndices": [
+                          1
+                        ]
+                      },
+                      {
+                        "segment": {
+                          "startIndex": 728,
+                          "endIndex": 970,
+                          "text": "*   **Processor Subsystem**: Information about the SIO (Secure and Non-secure SIO), CPUID, GPIO control, hardware spinlocks, inter-processor FIFOs (Mailboxes), doorbells, integer divider, RISC-V platform timer, TMDS encoder, and interpolator."
+                        },
+                        "groundingChunkIndices": [
+                          1,
+                          2
+                        ]
+                      },
+                      {
+                        "segment": {
+                          "startIndex": 971,
+                          "endIndex": 1157,
+                          "text": "*   **Boot Process**: Covers boot sequences, boot modes, flash boot, metadata blocks, and various boot scenarios like secure boot, signed images, A/B booting, and custom/OTP bootloaders."
+                        },
+                        "groundingChunkIndices": [
+                          3
+                        ]
+                      },
+                      {
+                        "segment": {
+                          "startIndex": 1388,
+                          "endIndex": 1433,
+                          "text": "It also discusses power reduction strategies."
+                        },
+                        "groundingChunkIndices": [
+                          3
+                        ]
+                      },
+                      {
+                        "segment": {
+                          "startIndex": 1434,
+                          "endIndex": 1563,
+                          "text": "*   **Resets**: An overview of chip-level and system resets, including sources, destinations, and interactions with the watchdog."
+                        },
+                        "groundingChunkIndices": [
+                          3
+                        ]
+                      },
+                      {
+                        "segment": {
+                          "startIndex": 1564,
+                          "endIndex": 1678,
+                          "text": "*   **Peripherals and Modules**: Detailed sections on various peripherals and modules, including:\n    *   Watchdog"
+                        },
+                        "groundingChunkIndices": [
+                          4
+                        ]
+                      },
+                      {
+                        "segment": {
+                          "startIndex": 1683,
+                          "endIndex": 1702,
+                          "text": "*   Always-on timer"
+                        },
+                        "groundingChunkIndices": [
+                          4
+                        ]
+                      },
+                      {
+                        "segment": {
+                          "startIndex": 1707,
+                          "endIndex": 1825,
+                          "text": "*   HSTX (Data FIFO, output shift register, bit crossbar, clock generator, command expander, PIO-to-HSTX coupled mode)"
+                        },
+                        "groundingChunkIndices": [
+                          4
+                        ]
+                      },
+                      {
+                        "segment": {
+                          "startIndex": 1830,
+                          "endIndex": 1869,
+                          "text": "*   TRNG (True Random Number Generator)"
+                        },
+                        "groundingChunkIndices": [
+                          4
+                        ]
+                      },
+                      {
+                        "segment": {
+                          "startIndex": 1874,
+                          "endIndex": 1897,
+                          "text": "*   SHA-256 accelerator"
+                        },
+                        "groundingChunkIndices": [
+                          4
+                        ]
+                      },
+                      {
+                        "segment": {
+                          "startIndex": 1902,
+                          "endIndex": 1933,
+                          "text": "*   QSPI memory interface (QMI)"
+                        },
+                        "groundingChunkIndices": [
+                          4
+                        ]
+                      },
+                      {
+                        "segment": {
+                          "startIndex": 1938,
+                          "endIndex": 2000,
+                          "text": "*   System Control Registers (SYSINFO, SYSCFG, TBMAN, BUSCTRL)"
+                        },
+                        "groundingChunkIndices": [
+                          4
+                        ]
+                      },
+                      {
+                        "segment": {
+                          "startIndex": 2001,
+                          "endIndex": 2211,
+                          "text": "*   **OTP (One-Time Programmable) Memory**: Covers the OTP address map, guarded reads, OTP IP details, hardware architecture, critical flags, page locks, error correction code (ECC), and device decommissioning."
+                        },
+                        "groundingChunkIndices": [
+                          4
+                        ]
+                      },
+                      {
+                        "segment": {
+                          "startIndex": 2213,
+                          "endIndex": 2293,
+                          "text": "The document also provides lists of registers for many of the described modules."
+                        },
+                        "groundingChunkIndices": [
+                          4,
+                          1,
+                          3,
+                          2
+                        ]
+                      }
+                    ]
+                  }
+                }
+              ],
+              "usageMetadata": {
+                "promptTokenCount": 7,
+                "candidatesTokenCount": 574,
+                "totalTokenCount": 754,
+                "promptTokensDetails": [
+                  {
+                    "modality": "TEXT",
+                    "tokenCount": 7
+                  }
+                ],
+                "toolUsePromptTokenCount": 64,
+                "toolUsePromptTokensDetails": [
+                  {
+                    "modality": "TEXT",
+                    "tokenCount": 64
+                  }
+                ],
+                "thoughtsTokenCount": 109
+              },
+              "modelVersion": "gemini-2.5-flash",
+              "responseId": "D6kjaautHKKPjMcPu_ODsQg"
+            }
+        headers:
+            Alt-Svc:
+                - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+            Content-Type:
+                - application/json; charset=UTF-8
+            Date:
+                - Mon, 24 Nov 2025 00:38:39 GMT
+            Server:
+                - scaffolding on HTTPServer2
+            Server-Timing:
+                - gfet4t7; dur=5074
+            Vary:
+                - Origin
+                - X-Origin
+                - Referer
+            X-Content-Type-Options:
+                - nosniff
+            X-Frame-Options:
+                - SAMEORIGIN
+            X-Xss-Protection:
+                - "0"
+        status: 200 OK
+        code: 200
+        duration: 5.165272583s

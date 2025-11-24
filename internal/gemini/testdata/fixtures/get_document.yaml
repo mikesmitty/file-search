@@ -1,0 +1,502 @@
+---
+version: 2
+interactions:
+    - id: 0
+      request:
+        proto: HTTP/1.1
+        proto_major: 1
+        proto_minor: 1
+        content_length: 0
+        transfer_encoding: []
+        trailer: {}
+        host: generativelanguage.googleapis.com
+        remote_addr: ""
+        request_uri: ""
+        body: ""
+        form: {}
+        headers:
+            Content-Type:
+                - application/json
+            User-Agent:
+                - google-genai-sdk/1.36.0 gl-go/go1.25.4
+            X-Goog-Api-Client:
+                - google-genai-sdk/1.36.0 gl-go/go1.25.4
+        url: https://generativelanguage.googleapis.com/v1beta/fileSearchStores
+        method: GET
+      response:
+        proto: HTTP/2.0
+        proto_major: 2
+        proto_minor: 0
+        transfer_encoding: []
+        trailer: {}
+        content_length: -1
+        uncompressed: true
+        body: |
+            {
+              "fileSearchStores": [
+                {
+                  "name": "fileSearchStores/rp2350-jyo8o92qxss0",
+                  "displayName": "rp2350",
+                  "createTime": "2025-11-21T16:56:00.767282Z",
+                  "updateTime": "2025-11-21T16:56:00.767282Z",
+                  "activeDocumentsCount": "21",
+                  "sizeBytes": "11989051"
+                }
+              ]
+            }
+        headers:
+            Alt-Svc:
+                - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+            Content-Type:
+                - application/json; charset=UTF-8
+            Date:
+                - Mon, 24 Nov 2025 01:20:23 GMT
+            Server:
+                - scaffolding on HTTPServer2
+            Server-Timing:
+                - gfet4t7; dur=130
+            Vary:
+                - Origin
+                - X-Origin
+                - Referer
+            X-Content-Type-Options:
+                - nosniff
+            X-Frame-Options:
+                - SAMEORIGIN
+            X-Xss-Protection:
+                - "0"
+        status: 200 OK
+        code: 200
+        duration: 147.659ms
+    - id: 1
+      request:
+        proto: HTTP/1.1
+        proto_major: 1
+        proto_minor: 1
+        content_length: 0
+        transfer_encoding: []
+        trailer: {}
+        host: generativelanguage.googleapis.com
+        remote_addr: ""
+        request_uri: ""
+        body: ""
+        form: {}
+        headers:
+            Content-Type:
+                - application/json
+            User-Agent:
+                - google-genai-sdk/1.36.0 gl-go/go1.25.4
+            X-Goog-Api-Client:
+                - google-genai-sdk/1.36.0 gl-go/go1.25.4
+        url: https://generativelanguage.googleapis.com/v1beta/fileSearchStores/rp2350-jyo8o92qxss0/documents
+        method: GET
+      response:
+        proto: HTTP/2.0
+        proto_major: 2
+        proto_minor: 0
+        transfer_encoding: []
+        trailer: {}
+        content_length: -1
+        uncompressed: true
+        body: |
+            {
+              "documents": [
+                {
+                  "name": "fileSearchStores/rp2350-jyo8o92qxss0/documents/rp2350datasheet20250729-000-xr4c9hlziirg",
+                  "displayName": "rp2350-datasheet-2025-07-29 - 000001 - Cover.pdf",
+                  "updateTime": "2025-11-23T21:12:22.115497Z",
+                  "createTime": "2025-11-23T21:12:21.271303Z",
+                  "state": "STATE_ACTIVE",
+                  "sizeBytes": "31005",
+                  "mimeType": "application/pdf"
+                },
+                {
+                  "name": "fileSearchStores/rp2350-jyo8o92qxss0/documents/rp2350datasheet20250729-000-19j216pyfsuv",
+                  "displayName": "rp2350-datasheet-2025-07-29 - 000025 - Chapter 2. System bus.pdf",
+                  "updateTime": "2025-11-23T21:12:22.992506Z",
+                  "createTime": "2025-11-23T21:12:21.797300Z",
+                  "state": "STATE_ACTIVE",
+                  "sizeBytes": "176723",
+                  "mimeType": "application/pdf"
+                },
+                {
+                  "name": "fileSearchStores/rp2350-jyo8o92qxss0/documents/rp2350datasheet20250729-000-79p9ct1wfmgo",
+                  "displayName": "rp2350-datasheet-2025-07-29 - 000014 - Chapter 1. Introduction.pdf",
+                  "updateTime": "2025-11-23T21:12:23.437457Z",
+                  "createTime": "2025-11-23T21:12:22.464271Z",
+                  "state": "STATE_ACTIVE",
+                  "sizeBytes": "165811",
+                  "mimeType": "application/pdf"
+                },
+                {
+                  "name": "fileSearchStores/rp2350-jyo8o92qxss0/documents/rp2350datasheet20250729-000-tu3aznb4otmx",
+                  "displayName": "rp2350-datasheet-2025-07-29 - 000002 - Colophon.pdf",
+                  "updateTime": "2025-11-23T21:12:25.503890Z",
+                  "createTime": "2025-11-23T21:12:22.541762Z",
+                  "state": "STATE_ACTIVE",
+                  "sizeBytes": "315751",
+                  "mimeType": "application/pdf"
+                },
+                {
+                  "name": "fileSearchStores/rp2350-jyo8o92qxss0/documents/rp2350datasheet20250729-000-ij96ob4pht2c",
+                  "displayName": "rp2350-datasheet-2025-07-29 - 000338 - Chapter 4. Memory.pdf",
+                  "updateTime": "2025-11-23T21:12:30.599832Z",
+                  "createTime": "2025-11-23T21:12:26.636357Z",
+                  "state": "STATE_ACTIVE",
+                  "sizeBytes": "194787",
+                  "mimeType": "application/pdf"
+                },
+                {
+                  "name": "fileSearchStores/rp2350-jyo8o92qxss0/documents/rp2350datasheet20250729-000-dxqa2wnqnovf",
+                  "displayName": "rp2350-datasheet-2025-07-29 - 000442 - Chapter 6. Power.pdf",
+                  "updateTime": "2025-11-23T21:12:29.896862Z",
+                  "createTime": "2025-11-23T21:12:28.030169Z",
+                  "state": "STATE_ACTIVE",
+                  "sizeBytes": "461773",
+                  "mimeType": "application/pdf"
+                },
+                {
+                  "name": "fileSearchStores/rp2350-jyo8o92qxss0/documents/rp2350datasheet20250729-000-q3vbdkut50bh",
+                  "displayName": "rp2350-datasheet-2025-07-29 - 000495 - Chapter 7. Resets.pdf",
+                  "updateTime": "2025-11-23T21:12:30.919600Z",
+                  "createTime": "2025-11-23T21:12:28.085799Z",
+                  "state": "STATE_ACTIVE",
+                  "sizeBytes": "265537",
+                  "mimeType": "application/pdf"
+                },
+                {
+                  "name": "fileSearchStores/rp2350-jyo8o92qxss0/documents/rp2350datasheet20250729-000-ufcrsqzgvvkj",
+                  "displayName": "rp2350-datasheet-2025-07-29 - 000354 - Chapter 5. Bootrom.pdf",
+                  "updateTime": "2025-11-23T21:12:31.377824Z",
+                  "createTime": "2025-11-23T21:12:28.386750Z",
+                  "state": "STATE_ACTIVE",
+                  "sizeBytes": "574042",
+                  "mimeType": "application/pdf"
+                },
+                {
+                  "name": "fileSearchStores/rp2350-jyo8o92qxss0/documents/rp2350datasheet20250729-000-t5py4pxb560h",
+                  "displayName": "rp2350-datasheet-2025-07-29 - 000036 - Chapter 3. Processor subsystem.pdf",
+                  "updateTime": "2025-11-23T21:12:39.356937Z",
+                  "createTime": "2025-11-23T21:12:29.122448Z",
+                  "state": "STATE_ACTIVE",
+                  "sizeBytes": "1861523",
+                  "mimeType": "application/pdf"
+                },
+                {
+                  "name": "fileSearchStores/rp2350-jyo8o92qxss0/documents/rp2350datasheet20250729-000-9p0v6g61qk5q",
+                  "displayName": "rp2350-datasheet-2025-07-29 - 000514 - Chapter 8. Clocks.pdf",
+                  "updateTime": "2025-11-23T21:12:36.960440Z",
+                  "createTime": "2025-11-23T21:12:33.922283Z",
+                  "state": "STATE_ACTIVE",
+                  "sizeBytes": "622615",
+                  "mimeType": "application/pdf"
+                }
+              ],
+              "nextPageToken": "cj0KD4IBDAjB8Y3JBhD41-O3AwoqQihycDIzNTBkYXRhc2hlZXQyMDI1MDcyOS0wMDAtOXAwdjZnNjFxazVx"
+            }
+        headers:
+            Alt-Svc:
+                - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+            Content-Type:
+                - application/json; charset=UTF-8
+            Date:
+                - Mon, 24 Nov 2025 01:20:23 GMT
+            Server:
+                - scaffolding on HTTPServer2
+            Server-Timing:
+                - gfet4t7; dur=92
+            Vary:
+                - Origin
+                - X-Origin
+                - Referer
+            X-Content-Type-Options:
+                - nosniff
+            X-Frame-Options:
+                - SAMEORIGIN
+            X-Xss-Protection:
+                - "0"
+        status: 200 OK
+        code: 200
+        duration: 107.873958ms
+    - id: 2
+      request:
+        proto: HTTP/1.1
+        proto_major: 1
+        proto_minor: 1
+        content_length: 0
+        transfer_encoding: []
+        trailer: {}
+        host: generativelanguage.googleapis.com
+        remote_addr: ""
+        request_uri: ""
+        body: ""
+        form: {}
+        headers:
+            Content-Type:
+                - application/json
+            User-Agent:
+                - google-genai-sdk/1.36.0 gl-go/go1.25.4
+            X-Goog-Api-Client:
+                - google-genai-sdk/1.36.0 gl-go/go1.25.4
+        url: https://generativelanguage.googleapis.com/v1beta/fileSearchStores/rp2350-jyo8o92qxss0/documents?pageToken=cj0KD4IBDAjB8Y3JBhD41-O3AwoqQihycDIzNTBkYXRhc2hlZXQyMDI1MDcyOS0wMDAtOXAwdjZnNjFxazVx
+        method: GET
+      response:
+        proto: HTTP/2.0
+        proto_major: 2
+        proto_minor: 0
+        transfer_encoding: []
+        trailer: {}
+        content_length: -1
+        uncompressed: true
+        body: |
+            {
+              "documents": [
+                {
+                  "name": "fileSearchStores/rp2350-jyo8o92qxss0/documents/rp2350datasheet20250729-000-6bqxtrlgdge5",
+                  "displayName": "rp2350-datasheet-2025-07-29 - 000817 - Chapter 10. Security.pdf",
+                  "updateTime": "2025-11-23T21:12:37.233968Z",
+                  "createTime": "2025-11-23T21:12:34.384532Z",
+                  "state": "STATE_ACTIVE",
+                  "sizeBytes": "398509",
+                  "mimeType": "application/pdf"
+                },
+                {
+                  "name": "fileSearchStores/rp2350-jyo8o92qxss0/documents/rp2350datasheet20250729-000-kikniqflxqte",
+                  "displayName": "rp2350-datasheet-2025-07-29 - 000877 - Chapter 11. PIO.pdf",
+                  "updateTime": "2025-11-23T21:12:41.335144Z",
+                  "createTime": "2025-11-23T21:12:37.674917Z",
+                  "state": "STATE_ACTIVE",
+                  "sizeBytes": "914075",
+                  "mimeType": "application/pdf"
+                },
+                {
+                  "name": "fileSearchStores/rp2350-jyo8o92qxss0/documents/rp2350datasheet20250729-000-qs0fgcmdyaao",
+                  "displayName": "rp2350-datasheet-2025-07-29 - 000588 - Chapter 9. GPIO.pdf",
+                  "updateTime": "2025-11-23T21:12:44.982682Z",
+                  "createTime": "2025-11-23T21:12:38.642468Z",
+                  "state": "STATE_ACTIVE",
+                  "sizeBytes": "1600759",
+                  "mimeType": "application/pdf"
+                },
+                {
+                  "name": "fileSearchStores/rp2350-jyo8o92qxss0/documents/rp2350datasheet20250729-001-8h8m0t6rrt1f",
+                  "displayName": "rp2350-datasheet-2025-07-29 - 001269 - Chapter 13. OTP.pdf",
+                  "updateTime": "2025-11-23T21:12:44.466092Z",
+                  "createTime": "2025-11-23T21:12:42.821784Z",
+                  "state": "STATE_ACTIVE",
+                  "sizeBytes": "503910",
+                  "mimeType": "application/pdf"
+                },
+                {
+                  "name": "fileSearchStores/rp2350-jyo8o92qxss0/documents/rp2350datasheet20250729-001-pnku9pjdot3y",
+                  "displayName": "rp2350-datasheet-2025-07-29 - 001328 - Chapter 14. Electrical and mechanical.pdf",
+                  "updateTime": "2025-11-23T21:12:44.418250Z",
+                  "createTime": "2025-11-23T21:12:43.160412Z",
+                  "state": "STATE_ACTIVE",
+                  "sizeBytes": "620686",
+                  "mimeType": "application/pdf"
+                },
+                {
+                  "name": "fileSearchStores/rp2350-jyo8o92qxss0/documents/rp2350datasheet20250729-001-7673aa19r9jh",
+                  "displayName": "rp2350-datasheet-2025-07-29 - 001350 - Appendix A_ Register field types.pdf",
+                  "updateTime": "2025-11-23T21:12:44.896982Z",
+                  "createTime": "2025-11-23T21:12:44.209893Z",
+                  "state": "STATE_ACTIVE",
+                  "sizeBytes": "58364",
+                  "mimeType": "application/pdf"
+                },
+                {
+                  "name": "fileSearchStores/rp2350-jyo8o92qxss0/documents/rp2350datasheet20250729-001-3f1b0f3e8e55",
+                  "displayName": "rp2350-datasheet-2025-07-29 - 001352 - Appendix B_ Units used in this document.pdf",
+                  "updateTime": "2025-11-23T21:12:48.025403Z",
+                  "createTime": "2025-11-23T21:12:47.034418Z",
+                  "state": "STATE_ACTIVE",
+                  "sizeBytes": "83929",
+                  "mimeType": "application/pdf"
+                },
+                {
+                  "name": "fileSearchStores/rp2350-jyo8o92qxss0/documents/rp2350datasheet20250729-001-gm0wtqsgvg1r",
+                  "displayName": "rp2350-datasheet-2025-07-29 - 001355 - Appendix C_ Hardware revision history.pdf",
+                  "updateTime": "2025-11-23T21:12:48.086521Z",
+                  "createTime": "2025-11-23T21:12:47.110632Z",
+                  "state": "STATE_ACTIVE",
+                  "sizeBytes": "77798",
+                  "mimeType": "application/pdf"
+                },
+                {
+                  "name": "fileSearchStores/rp2350-jyo8o92qxss0/documents/rp2350datasheet20250729-001-nwy0ihy56hpk",
+                  "displayName": "rp2350-datasheet-2025-07-29 - 001378 - Appendix H_ Documentation release history.pdf",
+                  "updateTime": "2025-11-23T21:12:49.030722Z",
+                  "createTime": "2025-11-23T21:12:48.247254Z",
+                  "state": "STATE_ACTIVE",
+                  "sizeBytes": "98157",
+                  "mimeType": "application/pdf"
+                },
+                {
+                  "name": "fileSearchStores/rp2350-jyo8o92qxss0/documents/rp2350datasheet20250729-000-wpntvi5s5xvh",
+                  "displayName": "rp2350-datasheet-2025-07-29 - 000962 - Chapter 12. Peripherals.pdf",
+                  "updateTime": "2025-11-23T21:14:37.455284Z",
+                  "createTime": "2025-11-23T21:12:48.573648Z",
+                  "state": "STATE_ACTIVE",
+                  "sizeBytes": "2685868",
+                  "mimeType": "application/pdf"
+                }
+              ],
+              "nextPageToken": "cj0KD4IBDAjQ8Y3JBhCA2cSRAgoqQihycDIzNTBkYXRhc2hlZXQyMDI1MDcyOS0wMDAtd3BudHZpNXM1eHZo"
+            }
+        headers:
+            Alt-Svc:
+                - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+            Content-Type:
+                - application/json; charset=UTF-8
+            Date:
+                - Mon, 24 Nov 2025 01:20:23 GMT
+            Server:
+                - scaffolding on HTTPServer2
+            Server-Timing:
+                - gfet4t7; dur=96
+            Vary:
+                - Origin
+                - X-Origin
+                - Referer
+            X-Content-Type-Options:
+                - nosniff
+            X-Frame-Options:
+                - SAMEORIGIN
+            X-Xss-Protection:
+                - "0"
+        status: 200 OK
+        code: 200
+        duration: 118.689292ms
+    - id: 3
+      request:
+        proto: HTTP/1.1
+        proto_major: 1
+        proto_minor: 1
+        content_length: 0
+        transfer_encoding: []
+        trailer: {}
+        host: generativelanguage.googleapis.com
+        remote_addr: ""
+        request_uri: ""
+        body: ""
+        form: {}
+        headers:
+            Content-Type:
+                - application/json
+            User-Agent:
+                - google-genai-sdk/1.36.0 gl-go/go1.25.4
+            X-Goog-Api-Client:
+                - google-genai-sdk/1.36.0 gl-go/go1.25.4
+        url: https://generativelanguage.googleapis.com/v1beta/fileSearchStores/rp2350-jyo8o92qxss0/documents?pageToken=cj0KD4IBDAjQ8Y3JBhCA2cSRAgoqQihycDIzNTBkYXRhc2hlZXQyMDI1MDcyOS0wMDAtd3BudHZpNXM1eHZo
+        method: GET
+      response:
+        proto: HTTP/2.0
+        proto_major: 2
+        proto_minor: 0
+        transfer_encoding: []
+        trailer: {}
+        content_length: -1
+        uncompressed: true
+        body: |
+            {
+              "documents": [
+                {
+                  "name": "fileSearchStores/rp2350-jyo8o92qxss0/documents/rp2350datasheet20250729-001-v1m2ax1w630f",
+                  "displayName": "rp2350-datasheet-2025-07-29 - 001358 - Appendix E_ Errata.pdf",
+                  "updateTime": "2025-11-23T21:12:50.878867Z",
+                  "createTime": "2025-11-23T21:12:48.682707Z",
+                  "state": "STATE_ACTIVE",
+                  "sizeBytes": "277429",
+                  "mimeType": "application/pdf"
+                }
+              ]
+            }
+        headers:
+            Alt-Svc:
+                - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+            Content-Type:
+                - application/json; charset=UTF-8
+            Date:
+                - Mon, 24 Nov 2025 01:20:23 GMT
+            Server:
+                - scaffolding on HTTPServer2
+            Server-Timing:
+                - gfet4t7; dur=101
+            Vary:
+                - Origin
+                - X-Origin
+                - Referer
+            X-Content-Type-Options:
+                - nosniff
+            X-Frame-Options:
+                - SAMEORIGIN
+            X-Xss-Protection:
+                - "0"
+        status: 200 OK
+        code: 200
+        duration: 130.53125ms
+    - id: 4
+      request:
+        proto: HTTP/1.1
+        proto_major: 1
+        proto_minor: 1
+        content_length: 0
+        transfer_encoding: []
+        trailer: {}
+        host: generativelanguage.googleapis.com
+        remote_addr: ""
+        request_uri: ""
+        body: ""
+        form: {}
+        headers:
+            Content-Type:
+                - application/json
+            User-Agent:
+                - google-genai-sdk/1.36.0 gl-go/go1.25.4
+            X-Goog-Api-Client:
+                - google-genai-sdk/1.36.0 gl-go/go1.25.4
+        url: https://generativelanguage.googleapis.com/v1beta/fileSearchStores/rp2350-jyo8o92qxss0/documents/rp2350datasheet20250729-000-xr4c9hlziirg
+        method: GET
+      response:
+        proto: HTTP/2.0
+        proto_major: 2
+        proto_minor: 0
+        transfer_encoding: []
+        trailer: {}
+        content_length: -1
+        uncompressed: true
+        body: |
+            {
+              "name": "fileSearchStores/rp2350-jyo8o92qxss0/documents/rp2350datasheet20250729-000-xr4c9hlziirg",
+              "displayName": "rp2350-datasheet-2025-07-29 - 000001 - Cover.pdf",
+              "updateTime": "2025-11-23T21:12:22.115497Z",
+              "createTime": "2025-11-23T21:12:21.271303Z",
+              "state": "STATE_ACTIVE",
+              "sizeBytes": "31005",
+              "mimeType": "application/pdf"
+            }
+        headers:
+            Alt-Svc:
+                - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+            Content-Type:
+                - application/json; charset=UTF-8
+            Date:
+                - Mon, 24 Nov 2025 01:20:24 GMT
+            Server:
+                - scaffolding on HTTPServer2
+            Server-Timing:
+                - gfet4t7; dur=96
+            Vary:
+                - Origin
+                - X-Origin
+                - Referer
+            X-Content-Type-Options:
+                - nosniff
+            X-Frame-Options:
+                - SAMEORIGIN
+            X-Xss-Protection:
+                - "0"
+        status: 200 OK
+        code: 200
+        duration: 112.88825ms
