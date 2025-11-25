@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.6.2](https://github.com/mikesmitty/file-search/compare/v0.6.1...v0.6.2) (2025-11-25)
+
+
+### Bug Fixes
+
+* Update module gopkg.in/dnaeon/go-vcr.v3 to v3.2.2 ([#65](https://github.com/mikesmitty/file-search/issues/65)) ([b85441a](https://github.com/mikesmitty/file-search/commit/b85441a48c5507d3e809081423a3afacc40244b5))
+
 ## [0.6.1](https://github.com/mikesmitty/file-search/compare/v0.6.0...v0.6.1) (2025-11-24)
 
 
