@@ -1,5 +1,16 @@
 # Changelog
 
+## [0.7.0](https://github.com/mikesmitty/file-search/compare/v0.6.2...v0.7.0) (2025-12-05)
+
+
+### ⚠ BREAKING CHANGES
+
+* Update module github.com/mark3labs/mcp-go to v0.43.2 ([#70](https://github.com/mikesmitty/file-search/issues/70))
+
+### Features
+
+* Update module github.com/mark3labs/mcp-go to v0.43.2 ([#70](https://github.com/mikesmitty/file-search/issues/70)) ([860b8b2](https://github.com/mikesmitty/file-search/commit/860b8b2104eb2d56cfea4f0325fbf29e0e34cd11))
+
 ## [0.6.2](https://github.com/mikesmitty/file-search/compare/v0.6.1...v0.6.2) (2025-11-26)
 
 
