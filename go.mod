@@ -3,7 +3,7 @@ module github.com/mikesmitty/file-search
 go 1.25.5
 
 require (
-	github.com/mark3labs/mcp-go v0.55.0
+	github.com/mark3labs/mcp-go v0.55.1
 	github.com/spf13/cobra v1.10.2
 	github.com/spf13/viper v1.21.0
 	google.golang.org/genai v1.62.0
